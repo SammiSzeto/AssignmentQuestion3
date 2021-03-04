@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Assignment Question 3</title>
+</head>
+<body>
+    <div id="Data">
+        <script>
+            fetch('patient.json.updated.json')      //accessing the file
+                .then(function (response) {
+                    return response.json();
+            })
+            .then(function (data) {
+                displayData(data);
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
+            
+            function displayData(data){
+                var mainContainer = document.getElementById("Data");
+                var div = document.createElement("div");
+                div.innerHTML = 'Name of Patient: ' + data.name.given + ' ' + data.name.family;   //Name of Patient
+                div.innerHTML = 'Organization Name: ' + data.managingOrganization.display";      //Organization Name: 
+                div.innerHTML = 'Gender: ' + data.gender;                                       //Gender
+                div.innerHTML = 'Number of Conditions They Have: 3';                           //Number of Conditions They Have
+                div.innerHTML = 'List of All Conditions: ';                                   //List of All Conditions
+                for( int i = 0; i < 3; i++){                                                 //iterating through conditions array to list the three elements
+                    if(i != 2){
+                        div.innerHTML = data.conditions[i] + ' ';
+                    }else{
+                        div.innerHTML = data.conditions[i];
+                    }
+                }
+ 
+        </script>
+    </div>
+</body>
+</html>
