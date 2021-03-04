@@ -27,14 +27,13 @@
                 div.innerHTML = 'Gender: ' + data.gender;                                       //Gender
                 div.innerHTML = 'Number of Conditions They Have: 3';                           //Number of Conditions They Have
                 div.innerHTML = 'List of All Conditions: ';                                   //List of All Conditions
-                for( int i = 0; i < 3; i++){                                                 //iterating through conditions array to list the three elements
+                for(int i = 0; i < 3; i++){                                                 //iterating through conditions array to list the three elements
                     if(i != 2){
-                        div.innerHTML = data.conditions[i] + ' ';
+                        div.innerHTML = data.conditions[i] + ', ';
                     }else{
                         div.innerHTML = data.conditions[i];
                     }
                 }
- 
         </script>
     </div>
 </body>
